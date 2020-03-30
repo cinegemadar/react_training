@@ -56,7 +56,6 @@ class App extends React.Component
             value={this.state.text}
           />
           <ValidationComponent textLength={this.state.text.length} limit="5"/>
-          <p>Insert text to the box above. Cards can be removed by tapping them. First tap removes the text, second tap remvoves the card.</p>
         </div>
         <Characters 
             text={this.state.text}
