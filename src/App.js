@@ -13,8 +13,7 @@ class App extends React.Component
     super()
     this.state = {
       users : testData,
-      text: "",
-      textLength : 0
+      text: ""
     }
     this.inputField = null
   }
@@ -28,7 +27,6 @@ class App extends React.Component
     let textArray = this.state.text.split('')
     textArray[charIndex] = ''
     let text=textArray.join('')
-    this.inputField.value = text
     this.setState({text:text})
   }
   render() 
@@ -47,9 +45,9 @@ class App extends React.Component
             type="text"
             class="input-group-text"
             onChange={this.changeHandler}
-            ref={input => this.inputField = input}
+            value={this.state.text}
           />
-          <ValidationComponent textLength={this.state.textLength}/>
+          <ValidationComponent textLength={this.state.text.length} limit="5"/>
         </div>
         <Characters 
             text={this.state.text}
